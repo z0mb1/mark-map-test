@@ -10,6 +10,10 @@ export const getAddress = async (
     );
     const data = await response.json();
 
+    if (!(data.address.house_number && data.address.road)) {
+      throw new Error("Точка не содержит номер дома");
+    }
+
     return { address: data.display_name, error: data.error };
   } catch (error) {
     console.error("Ошибка получения адреса:", error);

@@ -26,8 +26,11 @@ export class MapService {
   }
 
   centerMap(lon: number, lat: number, zoom = 14) {
-    this.map.getView().setCenter(fromLonLat([lon, lat]));
-    this.map.getView().setZoom(zoom);
+    this.map.getView().animate({
+      center: fromLonLat([lon, lat]),
+      zoom: zoom,
+      duration: 1000,
+    });
   }
 
   addMarker({ id, lon, lat }: { id: string; lon: number; lat: number }) {

@@ -7,6 +7,12 @@ export default {
       title: "Map",
     },
   },
+  markersList: {
+    empty: {
+      title: "Empty marker list",
+      text: "Add marker to map",
+    },
+  },
   notifications: {
     marker: {
       removeSuccess: "Successfully removed",
